@@ -1,0 +1,106 @@
+import cv2
+import pytesseract
+import re
+import os
+
+class MainTableExtractor:
+    def __init__(self, img, save_dir='detected_headers'):
+        self.image = img
+        self.save_dir = save_dir  # Directory to save images with drawn bounding boxes
+        if not os.path.exists(save_dir):  # Create the directory if it doesn't exist
+            os.makedirs(save_dir)
+
+    def execute(self):
+        # Convert image to grayscale
+        self.grey = cv2.cvtColor(self.image, cv2.COLOR_BGR2GRAY)
+
+        # Apply Gaussian blur to reduce noise
+        self.blurred = cv2.GaussianBlur(self.grey, (5, 5), 2)
+
+        # Apply adaptive thresholding
+        self.thresholded_image = cv2.adaptiveThreshold(
+            self.blurred, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 11, 3
+        )
+
+        # Invert the image to improve OCR accuracy
+        self.inverted_image = cv2.bitwise_not(self.thresholded_image)
+
+        # Set the PSM and OEM for OCR, optimal for detecting sparse text
+        custom_oem_psm_config = r'--oem 3 --psm 6'
+
+        # Use pytesseract to extract detailed data with the proper PSM and OEM
+        details = pytesseract.image_to_data(self.inverted_image, output_type=pytesseract.Output.DICT, config=custom_oem_psm_config)
+
+        # List of header keywords (you can add more as needed)
+        header_keywords = [
+             "item", "description", "quantity", "amount",
+            "gst no", "invoice no", "description of goods", "type", "hsn/sac", "gst rate", "rate", 
+            "e-way bill no", "product", "hsn",
+            "particular", "sr.", "assessable value",
+            "product description", "description of goods /services",
+            "description", "product name", "per", "unit", "uqc",
+            "hsn/sac code", "hsn code", "hsn/sac", "hsn"
+        ]
+
+        # Store detected header keyword positions
+        header_positions = []
+        found_keywords = set()  # To avoid duplicate keywords
+
+        # Detect keywords and their bounding boxes
+        for i, word in enumerate(details['text']):
+            if word.strip():  # Ignore empty strings
+                for keyword in header_keywords:
+                    if re.search(r'\b' + re.escape(keyword) + r'\b', word.lower(), re.IGNORECASE):
+                        if keyword not in found_keywords:
+                            # Record bounding box for header
+                            x, y, w, h = details['left'][i], details['top'][i], details['width'][i], details['height'][i]
+                            header_positions.append((keyword, x, y, x + w, y + h))
+                            found_keywords.add(keyword)
+
+        # If no valid headers found, return
+        if not header_positions:
+            print("No valid header keywords found.")
+            return None
+
+        # Sort the header positions by their y-coordinate to get the first row
+        header_positions.sort(key=lambda x: x[2])  # Sort by the top position (y-coordinate)
+
+        # Create a copy of the image for visualization
+        image_copy = self.image.copy()
+
+        # Draw bounding boxes around the detected header keywords on the copied image
+        for word, x1, y1, x2, y2 in header_positions:
+            cv2.rectangle(image_copy, (x1, y1), (x2, y2), (0, 255, 0), 2)  # Draw green rectangle
+            cv2.putText(image_copy, word, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 2)  # Add text label
+
+        # Calculate the table's bounding box
+        min_y = min([y1 for _, _, y1, _, _ in header_positions])
+        max_y = max([y2 for _, _, _, _, y2 in header_positions])
+
+        # Use line detection to refine the table region
+        kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (40, 1))
+        horizontal_lines = cv2.morphologyEx(self.thresholded_image, cv2.MORPH_OPEN, kernel)
+
+        contours, _ = cv2.findContours(horizontal_lines, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        if contours:
+            max_y = max([cv2.boundingRect(c)[1] + cv2.boundingRect(c)[3] for c in contours])
+
+        # Define the starting point for the table region: from the header row downwards
+        min_x = 0
+        max_x = self.image.shape[1]
+
+        # Extend the region to include all rows below the header dynamically
+        table_region = self.image[min_y:max_y, min_x:max_x]  # Removed fixed padding for dynamic table extraction
+
+        # Save the cropped table image
+        output_image_path = os.path.join(self.save_dir, "filtered_table_image.jpg")
+        cv2.imwrite(output_image_path, table_region)
+
+        print(f"Filtered table image saved to: {output_image_path}")
+
+        # Show the cropped table image
+        cv2.imshow('Detected Table', table_region)
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
+
+        return table_region  # Return the cropped main table area
