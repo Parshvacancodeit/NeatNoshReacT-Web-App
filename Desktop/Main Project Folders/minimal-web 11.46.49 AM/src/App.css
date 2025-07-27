@@ -1,0 +1,1152 @@
+
+@font-face {
+    font-family: myFont;
+    src: url(../src/assets/Mate-Regular.ttf);
+}
+
+@font-face {
+    font-family: font2;
+    src: url(../src/assets/Sacramento-Regular.ttf);
+}
+#root{
+    background-color: #FAEED1;
+}
+.nav-link:hover{
+   background-color: #D9ACF5;
+   border-radius: 20px;
+   transition: all 0.4s ease;
+   
+}
+
+.container-fluid{
+    background-color: #FDEBED;
+}
+
+nav.navbar{
+    background-color: #FDEBED !important;
+    position: sticky;
+    width: 100%;
+    top: 0px;
+    z-index: 99;
+
+}
+button.btn{
+    background-color:  #D9ACF5;
+    color: black;
+    border-radius: 20px; 
+}
+
+a.nav-link svg{
+    padding: 0px;
+    height: 20px;
+    width: 20px;
+    align-content: center;
+}
+
+
+a.navbar-brand svg{
+    padding-top: 0px;
+    height: 30px;
+    width: 30px;
+}
+
+a.dropdown-item{
+    display: flex;
+    align-items: right;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.form-control{
+    border-radius: 20px !important;
+}
+
+.Overall{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.Bothcomp{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+
+.Bothcomp svg{
+    height: 38px;
+    width: 38px;
+    margin-bottom: 2px;
+
+}
+
+.MainPage{
+    display: flex;
+    width: 100%;
+    padding: 10px auto;
+    background-color: #FAEED1;
+
+}
+
+
+.MyImg{
+
+    width: 40%;
+    min-width: 184px;
+    min-height: 170px;
+    float: right;
+    border-radius: 50%;
+    margin-left: 3%;
+}
+
+.MyImg:hover{
+    box-shadow: #D9ACF5;
+    box-shadow: 10%;
+}
+.PageImages{
+    top: 0px;
+    padding: 8% 4%;
+    flex-wrap: wrap;
+}
+
+.PageImages p,h1{
+    display:  flex;
+    font-size: 25px;
+    font-family: myFont;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 3%;
+}
+
+
+.PageImages p #text{
+    padding-right: 3%;
+    min-height: 170px;
+    
+}
+
+#ab2{
+    display: flex;
+   justify-content: center;
+   font-family: font2;
+   font-size: 435%;
+}
+
+.NewMainCard{
+    height: auto;
+    min-width: 350px;
+    width: 375px;
+    display: flex;
+    flex-direction: column;
+    border: solid black 1.5px;
+    border-radius: 3.5%;
+    padding: 6%;
+    align-items: center;
+    margin-top: 1.55%;
+    background-color:#FAEED1;
+    margin-bottom: 1.55%;
+    
+    
+}
+.NewMainCard:hover{
+    box-shadow: 14px 10px 5px #dec4ee;
+    -webkit-transition:  box-shadow .2s ease-in;
+  
+}
+.dropdown-menu{
+    z-index: 100;
+}
+
+
+.NewMainImage{
+height:175px;
+width: 175px;
+border-radius: 50%;
+border: solid 2.5px black;
+
+}
+
+.NewMainCard img {
+  text-align: center;
+}
+
+.ApnaKard{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-top: 1.5%;
+    background-color: #FFE5E5;
+    padding-bottom: 2.5%;
+    font-family: myFont;
+}
+
+
+.NewCardBody{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2%;
+}
+
+
+.NewMainCheck{
+    margin-top: 20px;
+    width: 50%;
+    font-size: 20px;
+    background-color:  #D9ACF5;
+    color: black;
+    border-radius: 25px; 
+    height: 45px;
+}
+
+.TitleHeadText h1{ 
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-family: font2;
+    font-size: 50px;
+    padding-top: 2.125%;
+    
+    
+}
+
+.TitleHeadText{
+    padding:5px;
+    display: flex;
+    background-color: #C5E898;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.NewMainDesc{
+    text-align: center;
+}
+
+@media screen and (max-width: 600px){
+    .PageImages{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .PageImages p #text{
+        
+        font-size: 20px;
+        justify-content: center;
+    }
+    
+    .PageImages p{
+        font-size: 20px;
+        align-items: center;
+        margin-top: 10.5px;
+        text-align: center;
+    }
+    .MyImg{
+        display: flex;
+        align-items: center;
+        text-align: center;
+        padding-top: -4.5%;
+
+
+
+    }
+
+    .NewMainImage{
+        margin-top: 6.5%;
+        border-radius: 50%;
+    }
+
+    #ab2{
+       margin-top: 6%;
+    }
+ .NewMainCard{
+    margin-top: 7.5% !important;
+ }
+
+ .NewMainCheck{
+    margin-bottom: 4%;
+ }
+ .nav-link:hover{
+    background-color: #D9ACF5;
+    border-radius: 20px;
+    
+ }
+
+ a.nav-link.active:hover{
+  padding: 2%;
+ }
+
+ a.nav-link:hover{
+    padding: 2%;
+ }
+
+ a.nav-link.dropdown-toggle:hover{
+    padding: 2%;
+   }
+
+ a.nav-link.dropdown-toggle.show:hover{
+    background-color: #D9ACF5;
+    border-radius: 20px;
+    padding-left: 2%;
+    
+ } 
+ .WholeCardTime{
+  padding-top: 1.78% !important;
+ }
+
+ .Catagories_sec ul{
+    margin-top: 3%;
+    display: flex;
+    flex-direction: column !important;
+   
+
+ }
+ .Card1over{
+    margin: 3.3%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ }
+
+
+ .ApnaKard{
+    padding-bottom: 4.5%;
+ }
+
+ .TestimonialCard{
+    min-width: 80%;
+    margin-top: 4.5%;
+ }
+
+ .Test_btm{
+    padding: 0px 10px 0px 10px !important;
+ }
+ .Apna_Blog{
+    padding-top: 3.45%;
+ }
+
+ .Loginform{
+    min-width: 80% !important;
+    
+ }
+ .rgstrform{
+    min-width: 80% !important;
+    
+ }
+ .CardUpr{
+    padding: 5.25%;
+ }
+ .Topsecpg{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important; 
+  }
+  .Imagesec img{
+    height: 330px !important;
+    width: 330px !important;
+    margin-top: 2% !important;
+  }
+  
+  .AddTObGBtn{
+    margin-top: 1.45%;
+  }
+}
+
+.NewMainPrice{
+    background-color: #D9ACF5;
+    width: 250px;
+    width: 50%;
+    height: 45px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    color: white;
+    background-color: black;
+    border-radius: 25px;
+}
+
+
+.WholeCardTime{
+    width: 100%;
+    display: flex ;
+    justify-content: center;
+    min-height: 40px;
+    max-height: 55px;
+    align-content: center;
+    align-items: center;
+    padding-top: 0.8%;
+    background-color: #e63c33f3;
+    position: sticky;
+    top: 58px;
+    z-index: 90;
+    color: rgb(255, 255, 255);
+}
+
+.WholeCardTime h1{
+    font-size: 20px;
+    
+}
+.TimeCollapse{
+    margin-left: 1%;
+}
+.Card1over:hover{
+    box-shadow: 0 6px 13px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ }
+
+.Catagories_sec{
+    width: 100%;
+    background-color: black;
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    align-content: center;
+
+
+}
+
+.Catagories_sec ul li{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.Catagories_sec ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 95%;
+    align-items: center;
+    margin-top: 0.5%;
+    line-height: 30px;
+
+
+}
+.Catagories_sec ul li button{
+    text-decoration: none;
+    color: #FFE5E5;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18.5px;
+    padding: 8px;
+   font-family: myFont;
+    
+    
+}
+
+
+/*Catagories Card Css*/
+.Card1over{
+    height: auto;
+    width: 280px;
+    background-color: #FAEED1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 40px;
+    border-radius: 5%;
+    border: solid 2px black;
+    padding: 1.5%;
+
+}
+
+.CardUpr{
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 1.25%;
+   
+}
+
+.CardUprimg{
+    height: 230px ;
+    width: 230px;
+    border: solid 2px black;
+    min-height: 230px;
+    min-width: 230px;
+    border-radius: 30%;
+ 
+}
+
+.FullDivfrb{
+    display: flex;
+    justify-content: center;
+
+}
+
+.Brofcat{
+    height: 3px;
+    color: #D9ACF5;
+}
+.catagorSec{
+    display: flex;
+    justify-content: center;
+    margin: 17px 0px 0px 0px;
+    font-size: 40px;
+    font-family: font2;
+    color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #0fa,
+        0 0 82px #0fa,
+        0 0 92px #0fa,
+        0 0 102px #0fa,
+        0 0 151px #0fa;
+  }
+  
+    
+
+
+
+#breakLine{
+    color: #dec4ee;
+    width: 80%;
+    margin: auto;
+    margin-top: 18px;
+}
+
+.CardDwnCont{
+     padding-top: 20px;
+    font-family: myFont;
+}
+
+.BtnSection{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+}
+
+.BtnSection button{
+    min-width: 160px;
+    border-radius: 30px;
+    min-height: 50px;
+    font-family: myFont;
+    font: 800;
+    background-color: #d8b6f1;
+
+}
+
+.BtnSection button:hover{
+    background-color: #85e7f6;
+    color: black;
+    
+}
+
+/*catagories card */
+.ApnaDusraKard{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0px 40px 0px 40px;
+    background-color: #FFE5E5;
+}
+
+.TotalCards{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0px 40px 0px 40px;
+    background-color: #FFE5E5;
+    padding-bottom: 3%;
+}
+
+
+.Catagories_sec button{
+    background-color: black;
+    color: white;
+    border: solid 1px black;
+}
+
+.Catagories_sec button:hover{
+    background-color: #dec4ee;
+    color: black;
+    border-radius: 25px;
+}
+
+.entireBlog{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.OnCEpure{
+    display: flex;
+    padding-top: 2%;
+    justify-content: space-evenly;
+    flex-wrap: wrap ;
+    width: 100%;
+    background-color: #d8b6f1;
+    padding-bottom: 3%;
+}
+
+.Apna_Blog{
+    padding-top: 1.15%;
+    font-family: font2;
+    background-color: black;
+    color: white;
+    font-size: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 60px;
+    vertical-align: middle;
+}
+
+.Apna_Blog h3{
+    font-size: 30px;
+}
+
+.TestimonialCard{
+    width: 65%;
+    border-radius: 23px;
+    padding-top: 1.5%;
+    background-color: #FAEED1;
+   margin-top: 2.5%;
+   border: solid black 2px;
+   
+
+}
+
+.Testimonial_Image{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: flex-start;
+    border: solid black 2px;
+}
+
+
+.Testimonial_top{
+    display: flex;
+    justify-content: space-around;
+    font-family: myFont;
+    padding: 0px 15px 0px 15px;
+}
+
+.Testimonial_User{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: myFont;
+
+
+}
+
+
+.Test_btm{
+    margin-top: 3%;
+    padding: 0px 20px 0px 20px;
+}
+
+.Veruser{
+    background-color: #99ff99;
+    width: fit-content;
+    padding: 10px;
+    color: black;
+    border-radius: 10px;
+    max-height: 40px;
+    font-size: 10px;
+
+}
+
+.Veruser svg path{
+    color: #1dcaff;
+    border: solid black 0.6px;
+}
+
+.Testimonial_User h2{
+    font-size: 20px;
+}
+
+.Veruser h4{
+    font-size: 15px;
+    vertical-align: middle;
+}
+
+.Testimonial_content{
+    font-family: myFont;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+
+.container{
+    background-color: #FAEED1;
+    color: black;
+    font-family: myFont;
+    max-width: 1300px;
+    padding-top: 4%;
+    padding-left: 0px;
+}
+
+#neatNosh{
+    font-family: font2;
+    font-size: 40px;
+    padding: 5px;
+}
+
+
+.EntireSettbox{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+
+}
+
+.Contentsabz{
+    width: 50%;
+    background-color: #cecece;
+
+}
+
+.Contincont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 40px;
+    border: solid black 0.65px;
+    align-items: center;
+
+}
+.Contincont p{
+    margin-top: 0;
+}
+
+.Accountinfo{
+    width: 50%;
+}
+
+.NewMainCard{
+    text-decoration: none;
+}
+
+
+.Loginpage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.Loginform{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 600px;
+    max-width: 75%;
+    min-width: 35%;
+    background-color: #dec1f3;
+    border-radius: 20px;
+    font-family: myFont;
+    border: solid 1px black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+
+.Accountpic{
+    margin-top: 2%;
+}
+.Accountpic svg {
+    height: 120px;
+    width: 120px;
+    
+}
+
+.LoginCard input{
+    text-align: center;
+    max-width: 200px;
+}
+
+.LoginCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.NoAccount{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: myFont;
+}
+
+.NoAccount h6{
+    margin-bottom: 15px;
+    line-height: 20px;
+}
+
+.NoAccount button{
+    width: 160px;
+    height: 40px;
+}
+.NoAccount button a{
+    text-decoration: none;
+    color: #000000;
+}
+
+.BtnSection{
+    margin-bottom: 2%;
+}
+
+.LoginCard input{
+   margin: 3.12%;
+   border: solid black 2px;
+   border-radius: 25px;
+   min-height: 40px;
+}
+
+.LoginCard button {
+    margin: 3.22%;
+    width: 70px;
+    border-radius: 25px;
+    height: 40px;
+
+}
+
+
+
+#btna2z{
+  width:175px;
+  border:solid 2px black
+}
+#btna2z:hover{
+    background-color: #DCF2F1;
+}
+
+/*Register css*/
+.Mainrgster{
+
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+
+.Toprgstr{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    
+}
+.Alrdyacct{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Alrdyacct button{
+    margin-top: 5px;
+}
+
+.Fromotracct{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.Iconsofotr{
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+.Iconsofotr svg{
+    height: 40px;
+    width: 40px;
+    text-decoration: none;
+}
+.Iconsofotr a{
+    text-decoration: none;
+    color: #000000;
+}
+
+.rgstrform{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 600px;
+    max-width: 75%;
+    min-width: 35%;
+    background-color: #dec1f3;
+    border-radius: 20px;
+    font-family: myFont;
+    border: solid 1px black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.inptBtn{
+    margin-bottom: 16px;
+}
+.veracct{
+    margin-bottom: 16px;
+}
+.Toprgstr h3{
+    margin: 25px;
+}
+
+.Logosec svg{
+    height : 70px;
+    width: 70px;
+}
+
+
+.containerzzz {
+    width: 100%;
+    height: 100%;
+    --s: 100px; /* control the size */
+    --c1: #ff8afc;
+    --c2: #1b1b3a;
+  
+    --_g: var(--c2) 6% 14%, var(--c1) 16% 24%, var(--c2) 26% 34%,
+      var(--c1) 36% 44%, var(--c2) 46% 54%, var(--c1) 56% 64%, var(--c2) 66% 74%,
+      var(--c1) 76% 84%, var(--c2) 86% 94%;
+    background: radial-gradient(
+        100% 100% at 100% 0,
+        var(--c1) 4%,
+        var(--_g),
+        #0008 96%,
+        #0000
+      ),
+      radial-gradient(
+          100% 100% at 0 100%,
+          #0000,
+          #0008 4%,
+          var(--_g),
+          var(--c1) 96%
+        )
+        var(--c1);
+    background-size: var(--s) var(--s);
+  }
+  
+
+  .Mainpg{
+    font-family: myFont;
+    padding: 4.25%;
+    
+    display: flex;
+    
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .Topsecpg{
+    display: flex;
+    flex-direction: row;
+    
+    align-items: flex-start;
+  }
+
+
+
+  .NxtotImg{
+    display: flex;
+    flex-direction: column;
+    padding: 3%;
+    margin-left: 2%;
+  }
+
+  .Lwrpadd{
+    padding: 1.12%;
+  }
+  .Lwrupflxsec{
+    display: flex;
+    justify-content: space-between;
+  }
+  .Imagesec img{
+    height: 400px;
+    width: 400px;
+    margin-top: 7.5%;
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .checkpincodeop{
+    display: flex;
+    flex-direction: row;
+    max-height: 50px;
+  }
+  .CupCat{
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+  .Quantssec{
+    display: flex;
+    flex-direction: column;
+    margin-left: 3.25%;
+    align-items: center;
+  }
+  .materialsec{
+    display: flex;
+    flex-direction: column;
+    margin-left: 3.25%;
+  }
+  .Starssec{
+    display: flex;
+    flex-direction: column;
+    margin-left: 3.25%;
+  }
+  .checkpincodeop input{
+    
+    border-top-left-radius: 19px;
+    border-bottom-left-radius: 19px;
+  }
+
+  .checkpincodeop button{
+    
+    border-top-right-radius: 19px;
+    border-bottom-right-radius: 19px;
+  }
+  .AddTObGBtn{
+
+    display: flex;
+    
+    
+}
+
+#cartBTN{
+    margin-left: 3.25%;
+    border-radius: 45px;
+    height: 45px;
+    padding: 4px;
+     width: 145px;
+     background-color: #99ff99;
+     font-weight: 700;
+}
+.AddTObGBtn{
+    display: flex;
+    align-items: center;
+
+}
+
+      
+
+  .Bottomsecpg{
+    padding: 1.12%;
+  }
+  .Pinbox{
+    margin: 1.25% 0%;
+  }
+  
+  .Pinbox label{
+      margin-left:1.15% ;
+  }
+  .Pinbox input{
+    height: 38px;
+  }
+  .Pinbox button{
+     height: 38px;
+     background-color: #d3aaf0;
+
+  }
+  .Offrlist{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 1.2% 0%;
+    align-content: center;
+
+  }
+
+  .Offersec{
+    border: 15px;
+
+  }
+
+  .Listofr1{
+    display: flex;
+    justify-content: flex-start;
+    margin: 1.25% 0%;
+    padding: 6px 0px;
+    border: 15px;
+    align-items: center;
+  }
+
+
+  #offrbtncss button{
+      height: 30px;
+      width: fit-content;
+      border-radius: 15px;
+      background-color: #d3aaf0;
+  }
+  #offdetcss{
+    margin-left: 2.45%;
+  }
+
+  .checkpincodeop ::placeholder{
+   padding: 0px 15px;
+}
+
+.counter{
+    display: flex;
+    min-width: 100px;
+    align-items: center;
+    flex-wrap: nowrap;
+    
+
+
+}
+.counter button{
+    display: flex;
+    align-items: center;
+    width: 60px;
+    height: 38px;
+    font-size: 30px;
+    justify-content: center;
+    padding-bottom: 3px;
+    border-radius: 25px;
+    background-color: #d9b5f3;
+    box-shadow: 0 1px 4.5px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(244, 192, 255, 0.19);
+
+
+}
+
+.counter h4{
+    font-size: 33px;
+    padding: 0px 8px;
+}
+
+.Onetwobagsec{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0.45% 0% 2.22% 0%;
+    line-height: 2%;
+}
